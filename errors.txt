@@ -1,0 +1,5 @@
+Error 1: Cannot align About us image with about us heading and text correctly
+Solution 1: Create a container with divisions and then arrange in a grid https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
+
+Error 2: Cannot centrally align log-in screen
+
