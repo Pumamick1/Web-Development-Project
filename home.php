@@ -26,8 +26,8 @@
                     id="navbarNav">
                     <ul class ="navbar-nav">
                          <li class="nav-item active me-auto">
-                             <a href = "login_page.html" class="nav-link">
-                                Log-in
+                             <a href = "file_upload.html" class="nav-link">
+                                Create a post
                             </a>
                         </li>
                     </ul>

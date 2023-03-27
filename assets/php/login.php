@@ -1,20 +1,24 @@
-<? php include("connection.php");
+<?php 
+include("connection.php"); 
 
-if(empty($_post["username"])|| empty($_POST["password"]))
-{
-    echo "Please input both fields"; 
+if(empty($_POST["username"]) || empty($_POST["password"])){
+    echo "Both fields are requried.";
 }else
-{ 
-    $username=$_post['username']; 
-    $username=$_post['password'];
-    $sql = "SELECT uid FROM users WHERE username = '$username' and password = '$password'";
+{
+    $username=$_POST['username'];
+    $password=$_POST['password'];
+
+    $sql="SELECT * FROM users WHERE username='$username' and password='$password'"; 
+
     $result=mysqli_query($db, $sql); 
 
     if(mysqli_num_rows($result) == 1)
     {
-        header("location: home"); //redirects to another page
-    }else{
+        header("location: home.php"); 
+    }else
+    {
         echo "Incorrect username or password."; 
     }
 }
-?> 
+
+?>
