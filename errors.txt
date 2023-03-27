@@ -3,3 +3,11 @@ Solution 1: Create a container with divisions and then arrange in a grid https:/
 
 Error 2: Cannot centrally align log-in screen
 
+
+Error 3: Could not save image into folder 
+Solution: ensure correct permissions on the file that i am uploading it to. This is a potential limitation to my way of doing it. 
+
+Error 4: had trouble making images a uniform size on my filter page
+UNRESOLVED
+
+Error 5: If there is only one post that has been viewed, then the 'most viewed section' will not work.
