@@ -51,63 +51,53 @@
             </button>
         </div>
         </nav>
-        <nav class="navbar navbar-expand-sm navbar-light p-2" style="background:linear-gradient(180deg, #556B2F 0%, #6B8E23 100%)">
-            <!--Body part buttons -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <form action="article_display.php" method = "POST">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <button type="submit" name="bodyPart" value="Head">Head</button>
-                        </li>
-                        <li class="nav-item active">
-                            <button type="submit" name="bodyPart" value="Chest">Chest</button>
-                        </li>
-                        <li class="nav-item active">
-                            <button type="submit" name="bodyPart" value="Legs">Legs</button>
-                        </li>
-                        <li class="nav-item active">
-                            <button type="submit" name="bodyPart" value="Back">Back</button>
-                        </li>
-                        <li class="nav-item active">
-                            <button type="submit" name="bodyPart" value="Hind_Quaters">Hind Quarters</button>
-                        </li>
-                        
-                    </ul>
+    <nav class="navbar navbar-expand-sm navbar-light p-2" style="background:linear-gradient(180deg, #556B2F 0%, #6B8E23 100%)">
+    <div class="collapse navbar-collapse" id="navbarNav">
+  <form action="article_display.php" method="POST">
+    <ul class="navbar-nav d-flex justify-content-between" style="width: 100%;">
+      <li class="nav-item">
+        <button type="submit" name="bodyPart" value="Head" class="btn btn-link">Head</button>
+      </li>
+      <li class="nav-item">
+        <button type="submit" name="bodyPart" value="Chest" class="btn btn-link">Chest</button>
+      </li>
+      <li class="nav-item">
+        <button type="submit" name="bodyPart" value="Legs" class="btn btn-link">Legs</button>
+      </li>
+      <li class="nav-item">
+        <button type="submit" name="bodyPart" value="Back" class="btn btn-link">Back</button>
+      </li>
+      <li class="nav-item">
+        <button type="submit" name="bodyPart" value="Hind_Quaters" class="btn btn-link">Hind Quarters</button>
+      </li>
+    </ul>
+  </form>
+</div>
 
-                </form>
+</nav>
 
+<style>
+    .btn-link {
+        color: white;
+        text-decoration: none;
+    }
 
+    .btn-link:hover {
+        color: white;
+        text-decoration: none;
+    }
+</style>
 
-                
-            </div>
-        </nav>
-        
         
        
         
 
 <!-- Main body -->
-
-<!--Preamble-->
-<div class="container-fluid p-3">
-    <div class = "row align-items-center">
-        <div class = "col-2">
-            <img src= "https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" height = "150" width="150" alt="Your image">
-        </div>
-        <div class = "col-10">
-            <h2>
-                Spread your expertise
-            </h2>
-            <p>Lorem sit amet consectetuer adipose elit eins orem ipsum sit amet consectetuer adipose elit eins Quos sunt ipsa null copium niet od neium jdaiojwdajdlajd cnkjankjnkjawnkjnakjdnkjwdnkajwn dnawmndwad nicwada oppo cmkalwm yii cmama p nckanwkan lolwwa cn apowdakc acjwi orem ipsum sit amet consectetuer adipose elit eins Quos sunt ipsa null copium niet od neium jdaiojwdajdlajd cnkjankjnkjawnkjnakjdnkjwdnkajwn dnawmndwad nicwada oppo cmkalwm yii cmama p nckanwkan lolwwa cn apowdakc acjwi orem ipsum sit amet consectetuer adipose elit eins Quos sunt ipsa null copium niet od neium jdaiojwdajdlajd cnkjankjnkjawnkjnakjdnkjwdnkajwn dnawmndwad nicwada oppo cmkalwm yii cmama p nckanwkan lolwwa cn apowdakc acjwi orem ipsum sit amet consectetuer adipose elit eins Quos sunt ipsa null copium niet od neium jdaiojwdajdlajd</p>
-        </div>
-    </div>
-</div>
-
 <!--Latest Post-->
 <div id="latest-posts">
-    <div class="container-fluid text-white p-3 border - 5" style="background-color: grey">
+    <div class="container-fluid text-white p-3 border - 5" style="background-color: white">
         <div class="row">
-            <div class="col text-center">
+            <div class="col text-center" style="color:#000;">
                 <h3>Latest Posts</h3>
             </div>
         </div>
@@ -122,7 +112,7 @@
                             <div class="caption" style="text-align:center; background-color:white; color:#000;">
                                 <h4>'.$row['title']. '</h4>
                             </div>
-                            <a href="display_post.php?title=' .$row['title'] . '"><img class="rounded mx-auto d-block" src="' . $row['image'] . '" width="150" height="150"></a>
+                            <a href="display_post.php?title=' .$row['title'] . '"><img class="rounded mx-auto d-block" src="' . $row['image'] . '" width="250" height="250"></a>
                         </div>';
                 }
             }
@@ -142,15 +132,15 @@
         <div class="row">
             <?php
             include("connection.php");
-            $sql = "SELECT title, image FROM posts ORDER BY views DESC LIMIT 3";
+            $sql = "SELECT title, image FROM posts ORDER BY views DESC LIMIT 6";
             $result = mysqli_query($db, $sql); 
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="col">
-                            <div class="caption" style="text-align:center; background-color:white; color:#000;">
+                            <div class="caption" style="text-align:center; background-color:grey; color:white;">
                                 <h4>'.$row['title']. '</h4>
                             </div>
-                            <a href="display_post.php?title=' .$row['title'] . '"><img class="rounded mx-auto d-block" src="' . $row['image'] . '" width="150" height="150"></a>
+                            <a href="display_post.php?title=' .$row['title'] . '"><img class="rounded mx-auto d-block" src="' . $row['image'] . '" width="250" height="250"></a>
                         </div>';
                 }
             }
@@ -158,6 +148,7 @@
         </div>
     </div>
 </div>
+
 
 
 
